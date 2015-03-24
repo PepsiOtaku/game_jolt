@@ -1,5 +1,5 @@
 ========================================================================
-Game Jolt Integration v1.0
+Game Jolt Integration v1.1
 For RPG Maker 2003 with DynRPG v0.20 or higher
 By PepsiOtaku
 ========================================================================
@@ -20,6 +20,7 @@ Leaderboards pull a maximum of 100 scores per leaderboard (gamejolt.com limitati
 Changelog
 ---------
 
+1.1 - Fixed a bug where if the GJ menu is called at the very end of battle, it could trigger the battle to restart (wtfomg). Some conditions were added to prevent the menu from being called upon a battle victory
 1.0 - First release
 
 Installation/Instructions
@@ -148,7 +149,7 @@ Any numeric parameters can be substituted for "V####" which takes the value of a
 	
 	This allows you to create complex string values for your leaderboard. For example, if you want to show both the time played, and the average level of your party.
 	
-	p3+ also takes one special command (so far):
+	p3+ also takes two special commands (so far):
 		"gj_time" - Converts p2 to a clock format (Ex: 48206 would become "13:23:26"
 		"gj_guest" - Instead of the currently logged in user, you can define a user's name as a guest. The user's name will be the next parameter. Use for testing scenarios when you want to see some names on your leaderboard.
 		
