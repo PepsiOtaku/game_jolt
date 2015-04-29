@@ -4,6 +4,8 @@ For RPG Maker 2003 with DynRPG v0.20 or higher
 By PepsiOtaku
 ========================================================================
 
+Demonstration: https://www.youtube.com/watch?v=Mo39ZkTiApk&hd=1
+
 This plugin integrates with a gamejolt.com game profile to show trophies and multiple leaderboards. Once it's been setup by the game developer, it's very user friendly towards the player and allows them to login with a gamejolt ID and token (a "disposable" password) from within the in-game menu. The login info is saved in Settings.ini, which future sessions use to automatically log in. Trophies and leaderboards will not work if a user is not logged in.
 
 By default, sessions login at the title screen and show a "toast" message with either the user that has logged in, or "Press Shift+Tab to log in", but you can disable it and call it via @gamejolt_login_toast if you want it to display at certain times (example: if you have a custom title screen/intro)
