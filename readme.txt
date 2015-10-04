@@ -1,5 +1,5 @@
 ========================================================================
-Game Jolt Integration v1.1
+Game Jolt Integration v1.2
 For RPG Maker 2003 with DynRPG v0.20 or higher
 By PepsiOtaku
 ========================================================================
