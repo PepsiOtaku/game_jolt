@@ -22,6 +22,7 @@ Leaderboards pull a maximum of 100 scores per leaderboard (gamejolt.com limitati
 Changelog
 ---------
 
+1.2 - Tokens (passwords that can be used in games) now get obfuscated by asterisks (****) when being entered. To-do in a future update: Add some kind of encryption when it's stored in Settings.ini. At the moment, I don't know jack about that stuff. :)
 1.1 - Fixed a bug where if the GJ menu is called at the very end of battle, it could trigger the battle to restart (wtfomg). Some conditions were added to prevent the menu from being called upon a battle victory
 1.0 - First release
 
@@ -120,7 +121,7 @@ UserToken=
 
 **********************************************
 
-18. You can either leave them blank, so the user enters their info using the UI, or add your user name and token here. The Token is NOT your password. It is a 6-digit temporary password that you can use in games. Create one if you don't already have one. It's simply under the Status bar after you've logged into the website.
+18. You can either leave them blank, so the user enters their info using the UI, or add your user name and token here. The Token is NOT your password. It is a temporary password that you can use in games. Create one if you don't already have one. It's simply under the Status bar after you've logged into the website.
 	NOTE: Before releasing your game, be sure to remove your user info from the Settings.ini.
 
 19. You're done! Well, almost. You still need to award your players with trophies and scores! Use the @gamejolt_award_trophy comment command for trophies, and the @gamejolt_award_score to save a score from a variable.
