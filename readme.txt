@@ -110,7 +110,7 @@ DisableLoginAtTitle=false
 
 16. "DisableLoginAtTitle" should be self-explanitory. It disables the automatic login/popup message at the title screen.
 	
-17. Create a Settings.ini if you do not have one, and add the following (between the asterisks) to it. You only need the [Settings] part once, so if you have other plugins that use a Settings.ini, you can just add what's below the [Settings] line.
+17. Create a Settings.ini if you do not have one and add the following (between the asterisks) to it, or use the included one. You only need the [Settings] part once, so if you have other plugins that use a Settings.ini, you can just add what's below the [Settings] line.
 
 **********************************************
 
