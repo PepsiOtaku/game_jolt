@@ -1,12 +1,12 @@
 ========================================================================
-Game Jolt Integration v1.2
+Game Jolt Integration v1.3
 For RPG Maker 2003 with DynRPG v0.20 or higher
 By PepsiOtaku
 ========================================================================
 
 Demonstration: https://www.youtube.com/watch?v=Mo39ZkTiApk&hd=1
 
-This plugin integrates with a gamejolt.com game profile to show trophies and multiple leaderboards. Once it's been setup by the game developer, it's very user friendly towards the player and allows them to login with a gamejolt ID and token (a "disposable" password) from within the in-game menu. The login info is saved in Settings.ini, which future sessions use to automatically log in. Trophies and leaderboards will not work if a user is not logged in.
+This plugin integrates with a gamejolt.com game profile to show trophies and multiple leaderboards. Once it's been setup by the game developer, it's very user friendly towards the player and allows them to login with a gamejolt ID and token (a "disposable" password) from within the in-game menu. The login info is saved in %AppData%\rpg2003\GameJolt.ini, and loaded across multiple games that use this plugin. Future sessions therefor automatically log in. Trophies and leaderboards will not work if a user is not logged in.
 
 By default, sessions login at the title screen and show a "toast" message with either the user that has logged in, or "Press Shift+Tab to log in", but you can disable it and call it via @gamejolt_login_toast if you want it to display at certain times (example: if you have a custom title screen/intro)
 
@@ -21,7 +21,7 @@ Leaderboards pull a maximum of 100 scores per leaderboard (gamejolt.com limitati
 
 Changelog
 ---------
-
+1.3 - Added server error messages (wrong user/token, connection failures, etc) & changed [root]\Settings.ini to an automatically created %AppData%\rpg2003\GameJolt.ini in order to be used per windows user account and across multiple RM2k3/DynRPG/GameJolt games. :D
 1.2 - Tokens (passwords that can be used in games) now get obfuscated by asterisks (****) when being entered. To-do in a future update: Add some kind of encryption when it's stored in Settings.ini. At the moment, I don't know jack about that stuff. :)
 1.1 - Fixed a bug where if the GJ menu is called at the very end of battle, it could trigger the battle to restart (wtfomg). Some conditions were added to prevent the menu from being called upon a battle victory
 1.0 - First release
@@ -50,9 +50,6 @@ REQUIRED: Microsoft Visual C++ 2013 Redistributable (x86):
 **********************************************
 
 [game_jolt]
-; Game ini filename 
-; Default: Settings.ini
-GameIniFilename=Settings.ini
 ; The name of your game. If left blank, the plugin will use the project name in RM2k3
 ; This will appear above trophies and leaderboards
 GameName=
@@ -109,22 +106,11 @@ DisableLoginAtTitle=false
 15. "DisableLeaderboards" hides the Trophies option from the menu UI, but you can still call it with @gamejolt_show_leaderboard
 
 16. "DisableLoginAtTitle" should be self-explanitory. It disables the automatic login/popup message at the title screen.
-	
-17. Create a Settings.ini if you do not have one and add the following (between the asterisks) to it, or use the included one. You only need the [Settings] part once, so if you have other plugins that use a Settings.ini, you can just add what's below the [Settings] line.
 
-**********************************************
-
-[Settings]
-; ============GameJolt============
-UserName=
-UserToken=
-
-**********************************************
-
-18. You can either leave them blank, so the user enters their info using the UI, or add your user name and token here. The Token is NOT your password. It is a temporary password that you can use in games. Create one if you don't already have one. It's simply under the Status bar after you've logged into the website.
+17. You can either leave them blank, so the user enters their info using the UI, or add your user name and token here. The Token is NOT your password. It is a temporary password that you can use in games. Create one if you don't already have one. It's simply under the Status bar after you've logged into the website.
 	NOTE: Before releasing your game, be sure to remove your user info from the Settings.ini.
 
-19. You're done! Well, almost. You still need to award your players with trophies and scores! Use the @gamejolt_award_trophy comment command for trophies, and the @gamejolt_award_score to save a score from a variable.
+18. You're done! Well, almost. You still need to award your players with trophies and scores! Use the @gamejolt_award_trophy comment command for trophies, and the @gamejolt_award_score to save a score from a variable.
 
 
 Commands
@@ -162,7 +148,7 @@ Any numeric parameters can be substituted for "V####" which takes the value of a
 		@gamejolt_award_score 45995, 48206, "gj_guest", "CoolGuy1234", "gj_time" - Outputs "CoolGuy1234 (Guest)" as the user, and "13:23:26" as the score.
 		
 @gamejolt_login_toast
-  -Attempts to log in using the User Name and Token defined in Settings.ini, and shows a toast message whether login was successful or not
+  -Attempts to log in using the User Name and Token defined in GameJolt.ini, and shows a toast message whether login was successful or not
   
 @gamejolt_login_screen
   -Loads the login screen. This is the same as hitting Shift-Tab.
