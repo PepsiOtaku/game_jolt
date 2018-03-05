@@ -1,5 +1,5 @@
 ========================================================================
-Game Jolt Integration v1.31
+Game Jolt Integration v1.32
 For RPG Maker 2003 with DynRPG v0.20 or higher
 By PepsiOtaku
 ========================================================================
@@ -21,6 +21,7 @@ Leaderboards pull a maximum of 100 scores per leaderboard (gamejolt.com limitati
 
 Changelog
 ---------
+1.32 - Limited the Game Jolt menu to only display in Scenes 0-29 (See RPG::Scene object)
 1.31 - Fixed a small but gross bug with saving the user/token to the %AppData%\rpg2003\GameJolt.ini file. PLEASE UPDATE
 1.3 - Added server error messages (wrong user/token, connection failures, etc) & changed [root]\Settings.ini to an automatically created %AppData%\rpg2003\GameJolt.ini in order to be used per windows user account and across multiple RM2k3/DynRPG/GameJolt games. :D
 1.2 - Tokens (passwords that can be used in games) now get obfuscated by asterisks (****) when being entered. To-do in a future update: Add some kind of encryption when it's stored in Settings.ini. At the moment, I don't know jack about that stuff. :)
